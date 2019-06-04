@@ -1,17 +1,21 @@
 package com.lab.springboost.entity;
 
+import com.lab.springboost.JMS.AuditListener;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "doctor", schema = "public", catalog = "pavel")
 @XmlRootElement(name = "doctor")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DoctorEntity {
+@EntityListeners({AuditListener.class})
+public class DoctorEntity implements Serializable {
     @XmlElement
     private Integer id;
     @XmlElement

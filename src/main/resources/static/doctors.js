@@ -1,7 +1,7 @@
 $("#editModal").on('show.bs.modal', function(event) {
     var doctorId = $(event.relatedTarget).data('doctor-id');
     var cols = $('#doctorId-' + doctorId + ' td');
-    fillCrudPatient(patientId, cols, false)
+    fillCrudPatient(doctorId, cols, false)
 });
 
 $("#editModal").on('hidden.bs.modal', function() {
